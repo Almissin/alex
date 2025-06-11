@@ -1,0 +1,26 @@
+menos_o_igual_2 = 0
+igual_a_3 = 0
+mas_de_3 = 0
+while True:
+    try:
+        cantidad_pacientes = int(input("Ingrese el número de pacientes: "))
+    except ValueError:
+        print("Opción no válida. Por favor, ingrese un número entero.")
+    else:
+        for i in range(1, cantidad_pacientes + 1):
+            try:
+                tratamientos = int(input(f"Ingrese la cantidad de tratamientos del paciente {i}: "))
+            except ValueError:
+                    print("Ingrese un número válido para tratamientos.")
+            if tratamientos >= 3:
+                print("El paciente ha tenido más de 3 tratamientos.\n")
+                mas_de_3 += 1
+            elif tratamientos <= 2:
+                print("El paciente ha tenido 2 o menos tratamientos.\n")
+                menos_o_igual_2 += 1
+            else:
+                print("El paciente ha tenido exactamente 3 tratamientos. \n")
+                igual_a_3 += 1
+    print("Resumen final:")
+    print(f"Pacientes con más de 3 tratamientos: {mas_de_3}")
+    print(f"Pacientes con 2 o menos tratamientos: {menos_o_igual_2}")
